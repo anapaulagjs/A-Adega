@@ -1,2 +1,2 @@
 # Aadega
- Site destinado A Adega
+ Site destinado ao projeto A Adega
