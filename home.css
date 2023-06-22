@@ -23,21 +23,24 @@ body {
     padding: 20px;
     background-color: #000;
   }
-  
-  #cart{
-    text-decoration: none;
-    color: #C5A671;
-    font-weight: bold;
-  }
-  .cart img {
-    margin-top: 5%;
-  }
-  .cart a {
-    text-decoration: none;
-    color: #C5A671;
-    font-weight: bold;
-    margin-top: 8%;
+
+ /* carrinho e longin*/
+ #cart{
+  text-decoration: none;
+  color: #C5A671;
+  font-weight: bold;
+
 }
+.cart img {
+  margin-top: 4%;
+}
+.cart a {
+  text-decoration: none;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #C5A671;
+}
+
   .navegation ul {
     list-style: none;
     margin: 0;

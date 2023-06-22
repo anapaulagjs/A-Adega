@@ -38,6 +38,25 @@ h1{
     font-weight: bold;
 
 }
+
+/* carrinho e longin*/
+#cart{
+    text-decoration: none;
+    color: #C5A671;
+    font-weight: bold;
+  
+  }
+  .cart img {
+    margin-top: 4%;
+  }
+  .cart a {
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #C5A671;
+  }
+
+  
  /*Estilo dos produtos*/
 
 .boxImg img {
