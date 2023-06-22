@@ -89,16 +89,4 @@ public class LoginCRUD {
             System.out.println("User not found.");
         }
     }
-
-    private static void deleteUser() {
-        System.out.print("Enter username: ");
-        String username = scanner.nextLine();
-        User user = userDatabase.getUserByUsername(username);
-        if (user != null) {
-            userDatabase.deleteUser(user);
-            System.out.println("User deleted successfully.");
-        } else {
-            System.out.println("User not found.");
-        }
-    }
 }
