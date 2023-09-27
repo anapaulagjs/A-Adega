@@ -1,0 +1,32 @@
+CREATE DATABASE clube_vinho;
+USE clube_vinho;
+
+CREATE TABLE membros (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    senha VARCHAR(255) NOT NULL
+);
+CREATE TABLE vinhos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    tipo VARCHAR(255) NOT NULL,
+    safra INT NOT NULL,
+    origem VARCHAR(255) NOT NULL,
+    pontuacao DECIMAL(3, 1),
+    descricao TEXT
+);
+CREATE TABLE eventos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    data DATE NOT NULL,
+    local VARCHAR(255) NOT NULL,
+    descricao TEXT
+);
+CREATE TABLE inscricoes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_evento INT NOT NULL,
+    id_membro INT NOT NULL,
+    FOREIGN KEY (id_evento) REFERENCES eventos (id),
+    FOREIGN KEY (id_membro) REFERENCES membros (id)
+);
