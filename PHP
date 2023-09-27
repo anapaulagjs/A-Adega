@@ -1,0 +1,48 @@
+// script.js
+
+// Função para carregar dados de vinhos do banco de dados
+function carregarVinhos() {
+    // Crie uma instância do objeto XMLHttpRequest
+    var xhr = new XMLHttpRequest();
+
+    // Defina o tipo de solicitação e a URL para a sua API ou arquivo PHP que lida com o banco de dados
+    xhr.open('GET', 'api_busca_vinhos.php', true);
+
+    // Defina a função de callback para tratar a resposta
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            // Parse a resposta JSON
+            var vinhos = JSON.parse(xhr.responseText);
+
+            // Agora você pode manipular os dados (por exemplo, inserir os vinhos no seu HTML)
+            exibirVinhos(vinhos);
+        } else {
+            console.error('Erro na requisição: ' + xhr.status);
+        }
+    };
+
+    // Envie a solicitação
+    xhr.send();
+}
+
+// Função para exibir os vinhos no seu HTML
+function exibirVinhos(vinhos) {
+    var container = document.getElementById('vinhos-container');
+    var html = '';
+
+    vinhos.forEach(function(vinho) {
+        html += '<div class="vinho">';
+        html += '<h3>' + vinho.nome + '</h3>';
+        html += '<p>Tipo: ' + vinho.tipo + '</p>';
+        html += '<p>Safra: ' + vinho.safra + '</p>';
+        html += '<p>Origem: ' + vinho.origem + '</p>';
+        html += '</div>';
+    });
+
+    container.innerHTML = html;
+}
+
+// Chame a função para carregar os vinhos quando a página carregar
+window.onload = function() {
+    carregarVinhos();
+};
